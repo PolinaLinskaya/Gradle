@@ -13,11 +13,19 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.google.code.gson:gson:2.10.1'
 }
 
 application {
-    mainClassName = 'com.example.Main'
+    mainClassName = 'Main'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
 }
 
 wrapper {
@@ -27,3 +35,4 @@ wrapper {
 test {
     useJUnitPlatform()
 }
+
